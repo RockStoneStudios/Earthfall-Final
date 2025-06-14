@@ -1,40 +1,40 @@
 
-
-using StarterAssets;
+using Cinemachine;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] int damageAmount = 1;
-    StarterAssetsInputs starterAssetsInputs;
+  
+    
+    [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] LayerMask interactionLayers;
+
+    CinemachineImpulseSource impulseSource;
 
 
     void Awake()
     {
-        starterAssetsInputs = GetComponentInParent<StarterAssetsInputs>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
-    void Update()
-    {
-        HandleShhot();
-    }
-    
 
-    private void HandleShhot()
+
+    public void Shoot(WeaponScriptable weapon)
     {
-        if (!starterAssetsInputs.shoot) return;
+
+        muzzleFlash.Play();
+        impulseSource.GenerateImpulse();
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
-            {
-                EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
-                enemyHealth?.TakeDamage(damageAmount);
+            Instantiate(weapon.HitVFX, hit.point, Quaternion.identity);
+            EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
+            enemyHealth?.TakeDamage(weapon.Damage);
 
-                starterAssetsInputs.ShootInput(false);
 
-            }
         }
-
-
     }
+
+
+    
 }
