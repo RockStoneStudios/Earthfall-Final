@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] GameObject robotExplosionVFX;
-   [SerializeField] int startingHealth = 3;
+    [SerializeField] int startingHealth = 3;
 
     int currentHealth;
 
