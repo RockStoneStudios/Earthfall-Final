@@ -7,7 +7,7 @@ public class Robot : MonoBehaviour
     FirstPersonController player;
     [SerializeField] float chaseRange = 5f;
     NavMeshAgent agent;
-    float distanceToTarget = Mathf.Infinity;
+  
 
 
 
@@ -28,13 +28,8 @@ public class Robot : MonoBehaviour
 
     void Update()
     {
-        distanceToTarget = Vector3.Distance(player.transform.position, transform.position);
-
-        if (distanceToTarget <= chaseRange)
-        {
-            agent.SetDestination(player.transform.position);
-
-        }
+        if (!player) return;
+        agent.SetDestination(player.transform.position);
 
     }
 

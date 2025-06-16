@@ -27,8 +27,9 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
         {
+            Debug.Log("Golpeando a "+ hit.collider.name);
             Instantiate(weapon.HitVFX, hit.point, Quaternion.identity);
-            EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
+            EnemyHealth enemyHealth = hit.collider.GetComponentInParent<EnemyHealth>();
             enemyHealth?.TakeDamage(weapon.Damage);
 
 
