@@ -6,18 +6,26 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int startingHealth = 3;
 
     int currentHealth;
+    GameManager gameManager;
 
     void Awake() 
     {
         currentHealth = startingHealth;
     }
 
-    public void TakeDamage(int amount) 
+    void Start()
+    {
+        gameManager = FindFirstObjectByType<GameManager>();
+        gameManager.AdjustEnemies(1);
+    }
+
+    public void TakeDamage(int amount)
     {
         currentHealth -= amount;
 
         if (currentHealth <= 0)
         {
+            gameManager.AdjustEnemies(-1);
             Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

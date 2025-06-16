@@ -1,6 +1,7 @@
 using Cinemachine;
 using UnityEngine.UI;
 using UnityEngine;
+using StarterAssets;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera deathVirtualCamera;
     [SerializeField] Transform weaponCamera;
     [SerializeField] Image[] shieldBars;
+    [SerializeField] GameObject gameOverContainer;
 
     int currentHealth;
     int gameOverVortualCameraPriority = 20;
@@ -30,6 +32,9 @@ public class PlayerHealth : MonoBehaviour
         {
             weaponCamera.parent = null;
             deathVirtualCamera.Priority = gameOverVortualCameraPriority;
+            gameOverContainer.SetActive(true);
+            StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
+            starterAssetsInputs.SetCursorState(false);
             Destroy(this.gameObject);
         }
     }
