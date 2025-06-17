@@ -39,6 +39,19 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+
+        // Asegura que no se pase del máximo
+        if (currentHealth > startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
+
+        AdjustShieldUI();
+    }
+
     void AdjustShieldUI()
     {
         for (int i = 0; i < shieldBars.Length; i++)

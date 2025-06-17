@@ -3,7 +3,9 @@ using UnityEngine;
 public abstract class Pickup : MonoBehaviour
 {
     [SerializeField] float rotationSpeed = 100f;
+    [SerializeField] AudioClip audioPickup;
     const string PLAYER_STRING = "Player";
+
 
 
     void Update()
@@ -19,6 +21,10 @@ public abstract class Pickup : MonoBehaviour
             ActivateWeapon activateWeapon = other.GetComponentInChildren<ActivateWeapon>();
             OnPickup(activateWeapon);
             Destroy(this.gameObject);
+            if (AudioManager.Instance != null)
+           {
+              AudioManager.Instance.PlaySFX(audioPickup);
+           }
         }
     }
 

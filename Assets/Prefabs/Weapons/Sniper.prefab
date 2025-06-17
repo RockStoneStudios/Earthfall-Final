@@ -5003,6 +5003,7 @@ MonoBehaviour:
   interactionLayers:
     serializedVersion: 2
     m_Bits: 1
+  audioShoot: {fileID: 8300000, guid: 29b791ffa865b5848a09821bd51544cc, type: 3}
 --- !u!114 &724733063148522880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5055,4 +5056,4 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 0, y: -0.2, z: 0}
+  m_DefaultVelocity: {x: 0, y: -0.001, z: 0}

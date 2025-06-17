@@ -53,6 +53,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8544291307231339473, guid: 56000a5c1c45c874a87b39a34273bfd2, type: 3}
+      propertyPath: audioPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 4473f01b6281cd642b916329d4535e9e, type: 3}
+    - target: {fileID: 8544291307231339473, guid: 56000a5c1c45c874a87b39a34273bfd2, type: 3}
       propertyPath: weaponScriptable
       value: 
       objectReference: {fileID: 11400000, guid: 0447e1d33f6f3cd4c81360f2969ff820, type: 2}

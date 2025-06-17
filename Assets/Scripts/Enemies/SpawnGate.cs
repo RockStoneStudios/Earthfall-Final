@@ -18,7 +18,7 @@ public class SpawnGate : MonoBehaviour
     private IEnumerator SpawnRoutine()
     {
         while (player) {
-            
+            spawnTime = Random.Range(5.2f, 10f);
             Instantiate(robotPrefab, spawnPoint.position, transform.rotation);
             yield return new WaitForSeconds(spawnTime);
         }

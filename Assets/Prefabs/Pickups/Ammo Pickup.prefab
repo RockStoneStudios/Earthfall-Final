@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
+  audioPickup: {fileID: 8300000, guid: 4473f01b6281cd642b916329d4535e9e, type: 3}
   ammoAmount: 100
 --- !u!1 &4289894978642925170
 GameObject:
