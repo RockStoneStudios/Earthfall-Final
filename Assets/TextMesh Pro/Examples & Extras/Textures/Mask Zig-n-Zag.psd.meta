@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: bb8dfcd263ad4eb383a33d74a720be6f
 timeCreated: 1441529862
-licenseType: Pro
+licenseType: Store
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -54,3 +54,10 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289616
+  packageName: Level up your code with design patterns and SOLID
+  packageVersion: 1.1
+  assetPath: Assets/TextMesh Pro/Examples & Extras/Textures/Mask Zig-n-Zag.psd
+  uploadId: 678909

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: c76d18757a194d618355f05f815cb0a1
 timeCreated: 1480388035
-licenseType: Pro
+licenseType: Store
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -57,3 +57,11 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289616
+  packageName: Level up your code with design patterns and SOLID
+  packageVersion: 1.1
+  assetPath: Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked
+    Text UI Screenshot.png
+  uploadId: 678909
